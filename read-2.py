@@ -9,6 +9,14 @@ with open('original.txt', 'r') as f:
 print('檔案讀取完了，總共有', len(data) ,'筆資料')
 		
 sum_len = 0 #總長度
-for d in data: #因為已將line存入data清單 清單才能算字串長度
+for d in data: #data=清單 清單才能算字串長度 d=每一筆留言
 	sum_len = sum_len + len(d)
 print('留言的平均長度是', sum_len / len(data))
+
+new = []
+for d in data:
+	if len(d) < 100: #留言長度是算字母
+		new.append(d)
+print('一共有', len(new), '筆留言長度小於100')
+print(new[0])
+print(new[1])
